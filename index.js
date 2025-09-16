@@ -116,9 +116,7 @@ let freq = {};
 let char = 0;
 function repeatingCharacter(str) {
     for (let i = 0; i <= str.length; i++) {
-        if (str[char] == str[char + 1]) {
-            freq.push(str[char]);
-        }
+
     }
     return;
 }
