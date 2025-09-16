@@ -1,0 +1,98 @@
+Qs. 1. Explain the difference between var, let, and const. Provide examples of scope differences.
+=>
+Value               Var                 let                     const
+
+Assign              true                true                    true
+Re-Assign           true                true                    false
+Re-declare          true                false                   false
+hosting             true                false                   false
+
+
+Qs. 2. What is event delegation in JavaScript? Why is it useful?
+=>
+Bubbling of events are travel from inner to outer element, Capturing of event are tavel from outer to inner element, 
+this is known as event delegation in JavaScript.
+
+
+Qs. 3. Explain hoisting with an example for both functions and variables.
+=> 
+Hoisting is an both function and variables are move to the top of the function and variables, is known as Hoisting.
+example=>
+console.log(a)   
+var a = 10
+
+
+Qs. 4. What are closures? Write a simple function demonstrating closure.
+=>
+Closures are refers to the process of it's outer function is an access in inner function of an closures.
+
+function outerFunction() {
+    let counter = 0;
+    function innerFunction() {
+        counter++;
+        console.log(counter, "counter");
+    }
+    return innerFunction;
+}
+
+const count = outerFunction();
+count();
+
+
+Qs. 5. How does the this keyword work in different contexts (global, object, class, arrow function)?
+=>
+"this" keyword in object => name = "awdiz";
+                            this.name = "name";
+                            console.log(`Hello ${this.name}`);
+
+"this" keyword in class => class teacher{
+                                constructor (name, subject) {
+                                    this.name = "name";
+                                    this.subject = "subject";
+                                };
+                            };
+
+"this" keyword in arrow function => const canVote = ((age) => {
+                                    let age = 18;
+                                    this.age = "age";
+                                });
+
+
+Qs. 6. What is the difference between == and === in JavaScript? Why is one preferred over the other?
+=>
+"==" -> comparing on the only is value.      (5 == "5"  // true)
+"===" -> comparing on the both Value and Datatypes check in strict mode.  (5 === "5"  // false)
+
+
+Qs. 7. Explain the call(), apply(), and bind() methods with examples.
+=>
+call() -> function can be execute then after callback system.
+apply() -> function can be applied in the execution of code.
+bind() ->
+
+
+Qs. 8. What are Promises and async/await? Show how to handle errors properly in both.
+=> 
+-> Promises is an refers to the process of it can be handle in async task and promises is an provide resolved, reject.  
+   resolved catch in .then(response), & reject catch in .catch(error).
+-> async/await is mainly used in web api system it handle in Promises in those context.
+
+async function data() {
+    const student = await fetchData;
+    console.log(student, "student");
+}
+data();
+
+
+Qs. 9. What is event loop in JavaScript? Explain the difference between microtasks and macrotasks with an example.
+=>
+Event loop is an used in mainly callback system, web api, callback queue and macrotasks queue, this process is known is Event loop.
+console.log("a");
+setTimeOut(()=>{
+    console.log("b");
+}, 2000);
+promises=> .resolved("c");              // microtasks queue
+output => a, c, b 
+
+
+Qs. 10. How does JavaScript memory management work? Explain garbage collection briefly.
